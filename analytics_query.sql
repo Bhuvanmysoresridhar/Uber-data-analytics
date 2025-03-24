@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `data-with-themihirmathur.uber_data_engineering_by_mihir.tbl_analytics` AS (
+CREATE OR REPLACE TABLE `data-with-bhuvan.uber_data_engineering_by_bhuvan.tbl_analytics` AS (
 SELECT
 f.VendorID,
 d.tpep_pickup_datetime,
@@ -20,12 +20,12 @@ f.improvement_surcharge,
 f.total_amount
 FROM 
 
-`data-with-themihirmathur.uber_data_engineering_by_mihir.fact_table` f
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.datetime_dim` d  ON f.datetime_id=d.datetime_id
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.passenger_count_dim` p  ON p.passenger_count_id=f.passenger_count_id  
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.trip_distance_dim` t  ON t.trip_distance_id=f.trip_distance_id  
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.rate_code_dim` r ON r.rate_code_id=f.rate_code_id  
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.pickup_location_dim` pick ON pick.pickup_location_id=f.pickup_location_id
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.dropoff_location_dim` drop ON drop.dropoff_location_id=f.dropoff_location_id
-JOIN `data-with-themihirmathur.uber_data_engineering_by_mihir.payment_type_dim` pay ON pay.payment_type_id=f.payment_type_id)
+`data-with-bhuvan.uber_data_engineering_by_bhuvan.fact_table` f
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.datetime_dim` d  ON f.datetime_id=d.datetime_id
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.passenger_count_dim` p  ON p.passenger_count_id=f.passenger_count_id  
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.trip_distance_dim` t  ON t.trip_distance_id=f.trip_distance_id  
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.rate_code_dim` r ON r.rate_code_id=f.rate_code_id  
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.pickup_location_dim` pick ON pick.pickup_location_id=f.pickup_location_id
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.dropoff_location_dim` drop ON drop.dropoff_location_id=f.dropoff_location_id
+JOIN `data-with-bhuvan.uber_data_engineering_by_bhuvan.payment_type_dim` pay ON pay.payment_type_id=f.payment_type_id)
 ;
